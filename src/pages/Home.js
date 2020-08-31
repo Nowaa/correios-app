@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [value, setValue] = useState("");
@@ -8,22 +9,29 @@ export default function Home() {
   async function handleTrackNumber(e) {
     e.preventDefault();
 
-    history.push("/tracker/" + value);
+    if (!value.length) {
+      toast.warn("Informe um código", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+
+    history.push("/tracker/" + value.trim());
   }
 
   return (
     <div class="flex min-h-screen items-center justify-center">
       <div class="w-1/2">
         <form
-          class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 "
+          class="bg-white  shadow-md rounded px-8 pt-6 pb-8 mb-4 "
           onSubmit={handleTrackNumber}
         >
-          <div class="mb-4 ">
+          <div class="mb-4">
             <label
-              class="block text-gray-700 text-sm font-bold mb-2"
+              class="block text-gray-700 text-xl font-bold mb-2 py-3"
               for="trackingnumber"
             >
-              Código de Rastreamento
+              Rastreie o seu objeto
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
