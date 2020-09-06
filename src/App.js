@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 toast.configure({
-  autoClose: 2000,
   limit: 1,
+  autoClose: 2000,
   hideProgressBar: true,
 });
 
