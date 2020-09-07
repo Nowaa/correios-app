@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 toast.configure({
   limit: 1,
   autoClose: 2000,
+  draggable: true,
   hideProgressBar: true,
 });
 
