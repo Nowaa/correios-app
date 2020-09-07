@@ -1,111 +1,134 @@
 import React, { useState, useEffect } from "react";
-import api from "../services/api";
-import { IconContext } from "react-icons";
+import Error from "../pages/Error";
+
 import {
-  FiBox,
-  FiTruck,
-  FiUserX,
-  FiSmile,
-  FiThumbsUp,
-  FiSend,
-} from "react-icons/fi";
+  FaBox,
+  FaParachuteBox,
+  FaTruckLoading,
+  FaDolly,
+  FaShippingFast,
+  FaRegSmileBeam,
+  FaUserTimes,
+  FaRegSadTear,
+  FaFileSignature,
+  FaBoxes,
+  FaHourglassHalf,
+  FaTimes,
+} from "react-icons/fa";
+
+import api from "../utils/api";
 
 function switchIcon(params) {
   switch (params) {
     case "Objeto postado":
-      return <FiBox />;
+      return <FaBox size={28} style={{ fill: "#f7fafc" }} />;
     case "Objeto encaminhado":
-      return <FiTruck />;
-    case "Objeto entregue ao destinatário":
-      return <FiThumbsUp />;
+      return <FaShippingFast size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto recebido na unidade de exportação no país de origem":
+      return <FaTruckLoading size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto recebido pelos Correios do Brasil":
+      return <FaParachuteBox size={28} style={{ fill: "#f7fafc" }} />;
+    case "Fiscalização aduaneira finalizada":
+      return <FaFileSignature size={28} style={{ fill: "#f7fafc" }} />;
     case "Objeto saiu para entrega ao destinatário":
-      return <FiSend />;
+      return <FaDolly size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto entregue ao destinatário":
+      return <FaRegSmileBeam size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto recebido na unidade de distribuição":
+      return <FaBoxes size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto ainda não chegou à unidade":
+      return <FaHourglassHalf size={28} style={{ fill: "#f7fafc" }} />;
+    case "Destinatário ausente":
+      return <FaUserTimes size={28} style={{ fill: "#f7fafc" }} />;
+    case "Objeto roubado ou extraviado":
+      return <FaRegSadTear size={28} style={{ fill: "#f7fafc" }} />;
     default:
-      return <FiUserX />;
+      return <FaTimes size={28} style={{ fill: "#f7fafc" }} />;
   }
 }
 
-export default function Tracker(props) {
-  const [updates, setUpdates] = useState([]);
-  const [error, setError] = useState(false);
+const Tracker = (props) => {
+  {
+    const [updates, setUpdates] = useState([]);
+    const [error, setError] = useState(false);
 
-  useEffect(() => {
-    const data = {
-      trackingNumber: props.match.params.number,
-    };
+    useEffect(() => {
+      const data = {
+        trackingNumber: props.match.params.number,
+      };
 
-    api
-      .get("/" + data.trackingNumber)
-      .then((res) => {
-        setUpdates(res.data[0]);
-      })
-      .catch(() => {
-        setError(true);
-        console.log("Código invalido");
-      });
-  }, [props.match.params.number]);
+      api
+        .get("/" + data.trackingNumber)
+        .then((res) => {
+          setUpdates(res.data[0]);
+        })
+        .catch(() => {
+          setError(true);
+          console.log("Código inválido");
+        });
+    }, [props.match.params.number]);
 
-  return (
-    <div className="min-h-screen bg-white">
-      <div className="updates-container container w-full md:w-4/5 xl:w-3/5  mx-auto px-2 ">
-        <div className="content">
-          {/* <div class="m-8 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:mx-8 lg:px-8"> */}
-          <div class="overflow-hidden min-w-full">
-            {!error ? (
-              <div>
-                <h2 class="text-3xl px-4 py-8">Atualizações</h2>
-                <div id="recipients" class="p-8 mt-6 lg:mt-0">
-                  <table class="table-fixed bg-white">
+    return (
+      <div className="min-h-0 flex flex-grow bg-gray-100">
+        <div className="updates-container container font-montserrat mx-auto py-8 px-2 sm:max-w-full md:w-4/5 xl:w-3/5">
+          <div className="content">
+            <div class="overflow-hidden min-w-full rounded mt-8 mb-16">
+              {!error ? (
+                <div>
+                  <table class="table-fixed">
                     <thead>
                       <tr>
-                        <th class="px-1 py-2 w-1/8"></th>
-                        <th class="px-1 py-2 w-1/8"></th>
-                        <th class="px-4 py-2 w-2/4"></th>
-                        <th class="px-4 py-2 w-3/4"></th>
+                        <th class="px-1 py-2 w-1/8 sm:py-1"></th>
+                        <th class="px-1 py-2 w-1/8 sm:py-1"></th>
+                        <th class="px-4 py-2 w-2/4 sm:py-1"></th>
+                        <th class="px-4 py-2 w-3/4 sm:py-1"></th>
                       </tr>
                     </thead>
                     <tbody>
-                      {updates.map((update) => (
-                        <tr>
-                          <td class="border-transparent px-4 py-2 bg-gray-200">
-                            {switchIcon(update.status)}
-                          </td>
-
-                          <td class="border-transparent px-4 py-2 bg-gray-200">
-                            <p class="sm:text-sm md:text-base lg:text-base font-normal text-blue-400 ">
-                              {update.data}
-                            </p>
-                            <p class="sm:text-base md:text-base lg:text-lg font-light text-gray-800">
-                              {update.hora}
-                            </p>
-                          </td>
-                          <td class="border-transparent px-4 py-2 bg-gray-100">
-                            <p class="sm:text-base md:text-base lg:text-lg font-semibold text-gray-800">
-                              {update.status}
-                            </p>
-                          </td>
-                          <td class="border-transparent sm:text-sm md:text-base lg:text-lg font-normal text-gray-900 bg-gray-100">
-                            {update.local}
-                            <p class="font-normal sm:text-sm md:text-base lg:text-lg text-gray-900">
-                              {update.origem}
-                            </p>
-                            <p class="font-normal sm:text-sm md:text-base lg:text-lg text-gray-900">
-                              {update.destino}
-                            </p>
-                          </td>
-                        </tr>
-                      ))}
+                      {updates
+                        .slice()
+                        .reverse()
+                        .map((update) => (
+                          <tr>
+                            <td class="border-transparent px-4 py-2 bg-indigo-600">
+                              {switchIcon(update.status)}
+                            </td>
+                            <td class="border-transparent pr-3 py-2 bg-indigo-600">
+                              <p class="font-sans sm:text-sm md:text-md lg:text-lg xl:text-md font-light text-gray-200">
+                                {update.data}
+                              </p>
+                              <p class="sm:text-sm md:text-sm lg:text-base xl:text-base font-light text-gray-300">
+                                {update.hora}
+                              </p>
+                            </td>
+                            <td class="border-transparent px-4 pb-5 pt-2 bg-purple-100">
+                              <p class="font-semibold text-gray-800 sm:text-base md:text-md lg:text-lg xl:text-xl">
+                                {update.status}
+                              </p>
+                            </td>
+                            <td class="font-medium text-gray-800 bg-purple-100 m-2 border-transparent sm:text-sm md:text-md lg:text-md xl:text-lg">
+                              {update.local}
+                              <p class="font-medium text-gray-800 bg-purple-100 mt-2 sm:text-sm md:text-md lg:text-md xl:text-lg">
+                                {update.origem}
+                              </p>
+                              <p class="font-medium text-gray-800 bg-purple-100 mb-2 sm:text-sm md:text-md lg:text-md xl:text-lg">
+                                {update.destino}
+                              </p>
+                            </td>
+                          </tr>
+                        ))}
                     </tbody>
                   </table>
                 </div>
-              </div>
-            ) : (
-              <p>Não encontrado</p>
-            )}
+              ) : (
+                <Error />
+              )}
+            </div>
           </div>
-          {/* </div> */}
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+};
+
+export default Tracker;
