@@ -28,7 +28,7 @@ const Home = () => {
         >
           <div class="mb-4">
             <label
-              class="block text-gray-700 text-xl font-montserrat font-semibold mb-2 py-3"
+              class="block text-gray-700 text-lg font-montserrat font-semibold mb-2 py-3"
               for="trackingnumber"
             >
               Rastreie o seu objeto

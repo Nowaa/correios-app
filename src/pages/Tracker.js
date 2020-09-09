@@ -21,29 +21,29 @@ import api from "../utils/api";
 function switchIcon(params) {
   switch (params) {
     case "Objeto postado":
-      return <FaBox size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaBox size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto encaminhado":
-      return <FaShippingFast size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaShippingFast size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido na unidade de exportação no país de origem":
-      return <FaTruckLoading size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaTruckLoading size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido pelos Correios do Brasil":
-      return <FaParachuteBox size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaParachuteBox size={24} style={{ fill: "#f7fafc" }} />;
     case "Fiscalização aduaneira finalizada":
-      return <FaFileSignature size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaFileSignature size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto saiu para entrega ao destinatário":
-      return <FaDolly size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaDolly size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto entregue ao destinatário":
-      return <FaRegSmileBeam size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaRegSmileBeam size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido na unidade de distribuição":
-      return <FaBoxes size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaBoxes size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto ainda não chegou à unidade":
-      return <FaHourglassHalf size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaHourglassHalf size={24} style={{ fill: "#f7fafc" }} />;
     case "Destinatário ausente":
-      return <FaUserTimes size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaUserTimes size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto roubado ou extraviado":
-      return <FaRegSadTear size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaRegSadTear size={24} style={{ fill: "#f7fafc" }} />;
     default:
-      return <FaTimes size={28} style={{ fill: "#f7fafc" }} />;
+      return <FaTimes size={24} style={{ fill: "#f7fafc" }} />;
   }
 }
 
@@ -78,10 +78,10 @@ const Tracker = (props) => {
                   <table class="table-fixed">
                     <thead>
                       <tr>
-                        <th class="px-1 py-2 w-1/8 sm:py-1"></th>
-                        <th class="px-1 py-2 w-1/8 sm:py-1"></th>
-                        <th class="px-4 py-2 w-2/4 sm:py-1"></th>
-                        <th class="px-4 py-2 w-3/4 sm:py-1"></th>
+                        <th class="px-1 py-2 w-1/8"></th>
+                        <th class="px-1 py-2 w-1/8"></th>
+                        <th class="px-4 py-2 w-2/4"></th>
+                        <th class="px-4 py-2 w-3/4"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -90,29 +90,29 @@ const Tracker = (props) => {
                         .reverse()
                         .map((update) => (
                           <tr>
-                            <td class="border-transparent px-4 py-2 bg-indigo-600">
+                            <td class="border-transparent px-2 py-2 bg-indigo-600">
                               {switchIcon(update.status)}
                             </td>
-                            <td class="border-transparent pr-3 py-2 bg-indigo-600">
-                              <p class="font-sans sm:text-sm md:text-md lg:text-lg xl:text-md font-light text-gray-200">
+                            <td class="border-transparent px-1 py-2 bg-indigo-600">
+                              <p class="font-sans font-light text-gray-200 text-base lg:text-lg">
                                 {update.data}
                               </p>
-                              <p class="sm:text-sm md:text-sm lg:text-base xl:text-base font-light text-gray-300">
+                              <p class="font-light text-gray-400 text-sm xl:text-base">
                                 {update.hora}
                               </p>
                             </td>
-                            <td class="border-transparent px-4 pb-5 pt-2 bg-purple-100">
-                              <p class="font-semibold text-gray-800 sm:text-base md:text-md lg:text-lg xl:text-xl">
+                            <td class="border-transparent px-3 pb-5 pt-2 bg-purple-100">
+                              <p class="font-semibold text-gray-800 text-base md:text-md lg:text-lg xl:text-lg">
                                 {update.status}
                               </p>
                             </td>
-                            <td class="font-medium text-gray-800 bg-purple-100 m-2 border-transparent sm:text-sm md:text-md lg:text-md xl:text-lg">
+                            <td class="font-medium text-gray-800 bg-purple-100 border-transparent text-base lg:text-md xl:text-lg">
                               {update.local}
-                              <p class="font-medium text-gray-800 bg-purple-100 mt-2 sm:text-sm md:text-md lg:text-md xl:text-lg">
-                                {update.origem}
-                              </p>
-                              <p class="font-medium text-gray-800 bg-purple-100 mb-2 sm:text-sm md:text-md lg:text-md xl:text-lg">
+                              <p class="font-medium text-gray-800 bg-purple-100 mb-1 mr-1 text-base lg:text-md xl:text-lg">
                                 {update.destino}
+                                <p class="font-medium text-gray-800 bg-purple-100 mt-1 mr-1 text-base lg:text-md xl:text-lg">
+                                  {update.origem}
+                                </p>
                               </p>
                             </td>
                           </tr>
