@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaRegSadTear } from "react-icons/fa";
 
 const Error = () => {
