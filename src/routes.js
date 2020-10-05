@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Header from "./pages/Header";
+import Header from "./components/Header/Header";
 import Tracker from "./pages/Tracker";
-import Footer from "./pages/Footer";
-import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer/Footer";
+import NotFound from "./components/NotFound/NotFound";
 
 const Routes = () => (
   <BrowserRouter>
