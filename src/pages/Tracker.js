@@ -53,16 +53,17 @@ const Tracker = (props) => {
                       {updates
                         .slice()
                         .reverse()
+                        .splice(1)
                         .map((update) => (
                           <tr>
                             <td class="border-transparent px-2 py-2 bg-indigo-600">
                               {SetStatusIcon(update.status)}
                             </td>
                             <td class="border-transparent px-1 py-2 bg-indigo-600">
-                              <p class="font-sans font-light text-indigo-100 text-base lg:text-md">
+                              <p class="font-light text-white text-base lg:text-md">
                                 {update.data}
                               </p>
-                              <p class="font-medium text-indigo-300 text-sm">
+                              <p class="font-light text-gray-100 text-sm">
                                 {update.hora}
                               </p>
                             </td>
