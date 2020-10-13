@@ -1,20 +1,28 @@
 
 
-<h2 align="center">cadê minha encomenda?</h2> 
+<h1 align="center">cadê minha encomenda?</h1> 
 
 <div align="center">
-     <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square&logo=appveyor" alt="license badge"/>
-     <img src="https://img.shields.io/badge/demo-online-success?style=flat-square&logo=appveyor" alt="demo badge"/>
-    <img src="https://img.shields.io/github/v/release/Nowaa/correios-app?style=flat-square" alt="version badge"/> 
+    <a href="https://github.com/Nowaa/correios-app/releases"><img 
+    src="https://img.shields.io/github/v/release/Nowaa/correios-app?style=flat-square?logoWidth=40" 
+    alt="Release Version Badge"/>
+    <a href="https://github.com/Nowaa/correios-app/blob/master/LICENSE.MD"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square?logoWidth=40" alt="License Badge"/>
+    <br>
+    <a href="https://app.netlify.com/sites/cademinhaencomenda/deploys"><img src="https://api.netlify.com/api/v1/badges/d9c97f99-4e2f-4b5a-a971-ab30b712fdc5/deploy-status" 
+    alt="Netlify Status Badge"/>  
+     <br>  
 </div>
 
-<h5 align="center">Rastreamento de objetos postados via Correios.</h5>   
+<br>
+<h4 align="center">Rastreamento de objetos postados via Correios.</h4>   
+<br>
 
-<h4>Demo</h4>
+<h3>Demo</h3>
 
-![cadê minha encomenda demo](https://i.imgur.com/DgEJgWm.gif)
+[![cadê minha encomenda live app](https://i.imgur.com/DgEJgWm.gif)](https://cademinhaencomenda.netlify.app/)
 
-<h4>Como usar</h4>
+<h3>Instalação</h3>
+
 
 Para clonar, instalar e executar a aplicação localmente, utilize [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/download/) com os seguintes comandos:
 
