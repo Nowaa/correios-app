@@ -93,7 +93,6 @@ const Tracker = (props) => {
         </div>
       </div>
     );
-  }
-};
+  };
 
 export default Tracker;
