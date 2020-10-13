@@ -7,7 +7,6 @@ import api from "../utils/api";
 import SetStatusIcon from "../utils/SetStatusIcon";
 
 const Tracker = (props) => {
-  {
     const [updates, setUpdates] = useState([]);
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
