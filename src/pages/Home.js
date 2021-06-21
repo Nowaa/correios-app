@@ -17,7 +17,7 @@ const Home = () => {
       return;
     }
 
-    history.push("/tracker/" + value);
+    history.push("/tracker/" + value.trim());
   }
 
   return (
