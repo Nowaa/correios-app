@@ -13,6 +13,9 @@ import {
   FaBoxes,
   FaHourglassHalf,
   FaTimes,
+  FaQuestion,
+  FaCommentDollar,
+  FaDollarSign,
 } from "react-icons/fa";
 
 function SetStatusIcon(params) {
@@ -21,7 +24,9 @@ function SetStatusIcon(params) {
       return <FaBox size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto postado após o horário limite da unidade":
       return <FaBox size={24} style={{ fill: "#f7fafc" }} />;
-    case "Objeto encaminhado":
+    case "Objeto em trânsito - por favor aguarde":
+      return <FaShippingFast size={24} style={{ fill: "#f7fafc" }} />;
+    case "Encaminhado para fiscalização aduaneira":
       return <FaShippingFast size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido na unidade de exportação no país de origem":
       return <FaTruckLoading size={24} style={{ fill: "#f7fafc" }} />;
@@ -29,6 +34,10 @@ function SetStatusIcon(params) {
       return <FaParachuteBox size={24} style={{ fill: "#f7fafc" }} />;
     case "Fiscalização aduaneira finalizada":
       return <FaFileSignature size={24} style={{ fill: "#f7fafc" }} />;
+    case "Pagamento confirmado":
+      return <FaDollarSign size={24} style={{ fill: "#f7fafc" }} />;
+    case "Aguardando pagamento":
+      return <FaCommentDollar size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto aguardando retirada no endereço indicado":
       return <FaHourglassHalf size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto saiu para entrega ao destinatário":
@@ -43,6 +52,8 @@ function SetStatusIcon(params) {
       return <FaUserTimes size={24} style={{ fill: "#f7fafc" }} />;
     case "Objeto roubado ou extraviado":
       return <FaRegSadTear size={24} style={{ fill: "#f7fafc" }} />;
+    case "Objeto não localizado no fluxo postal":
+      return <FaQuestion size={24} style={{ fill: "#f7fafc" }} />;
     default:
       return <FaTimes size={24} style={{ fill: "#f7fafc" }} />;
   }
