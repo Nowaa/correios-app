@@ -21,41 +21,41 @@ import {
 function SetStatusIcon(params) {
   switch (params) {
     case "Objeto postado":
-      return <FaBox size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaBox size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto postado após o horário limite da unidade":
-      return <FaBox size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaBox size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto em trânsito - por favor aguarde":
-      return <FaShippingFast size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaShippingFast size={25} style={{ fill: "#f7fafc" }} />;
     case "Encaminhado para fiscalização aduaneira":
-      return <FaShippingFast size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaShippingFast size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido na unidade de exportação no país de origem":
-      return <FaTruckLoading size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaTruckLoading size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido pelos Correios do Brasil":
-      return <FaParachuteBox size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaParachuteBox size={25} style={{ fill: "#f7fafc" }} />;
     case "Fiscalização aduaneira finalizada":
-      return <FaFileSignature size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaFileSignature size={25} style={{ fill: "#f7fafc" }} />;
     case "Pagamento confirmado":
-      return <FaDollarSign size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaDollarSign size={25} style={{ fill: "#f7fafc" }} />;
     case "Aguardando pagamento":
-      return <FaCommentDollar size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaCommentDollar size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto aguardando retirada no endereço indicado":
-      return <FaHourglassHalf size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaHourglassHalf size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto saiu para entrega ao destinatário":
-      return <FaDolly size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaDolly size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto entregue ao destinatário":
-      return <FaRegSmileBeam size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaRegSmileBeam size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto recebido na unidade de distribuição":
-      return <FaBoxes size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaBoxes size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto ainda não chegou à unidade":
-      return <FaHourglassHalf size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaHourglassHalf size={25} style={{ fill: "#f7fafc" }} />;
     case "Destinatário ausente":
-      return <FaUserTimes size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaUserTimes size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto roubado ou extraviado":
-      return <FaRegSadTear size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaRegSadTear size={25} style={{ fill: "#f7fafc" }} />;
     case "Objeto não localizado no fluxo postal":
-      return <FaQuestion size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaQuestion size={25} style={{ fill: "#f7fafc" }} />;
     default:
-      return <FaTimes size={24} style={{ fill: "#f7fafc" }} />;
+      return <FaTimes size={25} style={{ fill: "#f7fafc" }} />;
   }
 }
 
