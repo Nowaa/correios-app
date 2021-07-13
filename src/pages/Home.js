@@ -29,7 +29,7 @@ const Home = () => {
         >
           <div class="mb-4">
             <label
-              class="block text-gray-700 text-lg font-montserrat font-semibold mb-2 py-3"
+              class="block text-gray-700 text-lg font-poppins font-semibold mb-2 py-3"
               for="trackingnumber"
             >
               Rastreie o seu objeto
@@ -46,7 +46,7 @@ const Home = () => {
 
           <div class="flex items-center justify-center">
             <button
-              class="items-center text-white font-montserrat font-bold py-2 px-4 rounded bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+              class="items-center text-white font-poppins font-normal py-2 px-4 rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
               type="submit"
             >
               Rastrear

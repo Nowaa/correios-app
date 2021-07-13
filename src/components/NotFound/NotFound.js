@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 const NotFound = () => {
   return (
     <div class="flex justify-center flex-grow mt-48">
-      <div class="mt-16 font-montserrat">
+      <div class="mt-16 font-body">
         <div class="flex items-center justify-center text-indigo-600 mb-6">
           <FaTimes size={100} />
         </div>
