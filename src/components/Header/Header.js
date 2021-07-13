@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div class="bg-indigo-600 shadow-lg">
+    <div class="shadow-sm">
       <Link to="/">
-        <p class="text-2xl text-gray-100 font-esteban font-normal px-2 py-2 ml-8">
+        <p class="text-xl text-indigo-600 font-header py-3 px-6 md:px-20">
           cadê minha encomenda?
-        </p>
+        </p>  
       </Link>
     </div>
   );
