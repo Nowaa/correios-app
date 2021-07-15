@@ -19,7 +19,7 @@
 
 <h3>Demo</h3>
 
-[![cadê minha encomenda live app](https://i.imgur.com/DgEJgWm.gif)](https://cademinhaencomenda.netlify.app/)
+[![cadê minha encomenda live app](https://i.imgur.com/H5g8GFU.gif)](https://cademinhaencomenda.netlify.app/)
 
 <h3>Instalação</h3>
 
